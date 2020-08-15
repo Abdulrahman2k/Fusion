@@ -1,0 +1,39 @@
+--------------------------------------------------------
+--  File created - Saturday-August-15-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PTE_EMPLOYEE_DEL_LIST_DTL
+--------------------------------------------------------
+
+  CREATE TABLE "ETCHCM"."PTE_EMPLOYEE_DEL_LIST_DTL" 
+   (	"EMP_LIST_DEL_DTL_ID" NUMBER, 
+	"EMP_LIST_DEL_HDR_ID" NUMBER, 
+	"EMPLOYEE_ID" NUMBER, 
+	"EMPLOYEE_NUMBER" VARCHAR2(50 BYTE), 
+	"EMPLOYEE_DESC" VARCHAR2(500 BYTE), 
+	"ENABLED_FLAG" VARCHAR2(1 BYTE), 
+	"CREATED_BY" NUMBER, 
+	"CREATION_DATE" DATE, 
+	"LAST_UPDATED_BY" NUMBER, 
+	"LAST_UPDATE_DATE" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PTE_EMP_LIST_DEL_DTL_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "ETCHCM"."PTE_EMP_LIST_DEL_DTL_PK" ON "ETCHCM"."PTE_EMPLOYEE_DEL_LIST_DTL" ("EMP_LIST_DEL_DTL_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table PTE_EMPLOYEE_DEL_LIST_DTL
+--------------------------------------------------------
+
+  ALTER TABLE "ETCHCM"."PTE_EMPLOYEE_DEL_LIST_DTL" MODIFY ("EMP_LIST_DEL_DTL_ID" NOT NULL ENABLE);
+  ALTER TABLE "ETCHCM"."PTE_EMPLOYEE_DEL_LIST_DTL" MODIFY ("EMP_LIST_DEL_HDR_ID" NOT NULL ENABLE);
+  ALTER TABLE "ETCHCM"."PTE_EMPLOYEE_DEL_LIST_DTL" MODIFY ("EMPLOYEE_ID" NOT NULL ENABLE);
+  ALTER TABLE "ETCHCM"."PTE_EMPLOYEE_DEL_LIST_DTL" ADD CONSTRAINT "PTE_EMP_LIST_DEL_DTL_PK" PRIMARY KEY ("EMP_LIST_DEL_DTL_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;

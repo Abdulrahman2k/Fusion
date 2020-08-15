@@ -1,0 +1,29 @@
+--------------------------------------------------------
+--  File created - Saturday-August-15-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PTE_REQUEST_HIST_DETAILS
+--------------------------------------------------------
+
+  CREATE TABLE "ETCHCM"."PTE_REQUEST_HIST_DETAILS" 
+   (	"REQUEST_HDR_ID" NUMBER, 
+	"REQUEST_LINE_ID" NUMBER, 
+	"EMPLOYEE_ID" NUMBER, 
+	"ELEMENT_ID" NUMBER, 
+	"ELEMENT_VAL_TYPE" VARCHAR2(10 BYTE), 
+	"ELEMENT_VALUE" NUMBER, 
+	"DESCRIPTION" VARCHAR2(1000 BYTE), 
+	"EXCEPTION_REMARK" VARCHAR2(1000 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Ref Constraints for Table PTE_REQUEST_HIST_DETAILS
+--------------------------------------------------------
+
+  ALTER TABLE "ETCHCM"."PTE_REQUEST_HIST_DETAILS" ADD CONSTRAINT "FK_REQ_HIST_HD_ID" FOREIGN KEY ("REQUEST_HDR_ID")
+	  REFERENCES "ETCHCM"."PTE_REQUEST_HIST_HEADERS" ("REQUEST_HDR_ID") ENABLE;
